@@ -1,0 +1,11 @@
+.blog-layout {
+  background: var(--bg-secondary);
+  min-height: 100vh;
+  padding: var(--spacing-lg) 0;
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+}

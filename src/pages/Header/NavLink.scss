@@ -1,0 +1,81 @@
+.nav-link {
+  position: relative;
+  background: none;
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: color var(--transition);
+  overflow: hidden;
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    display: block;
+    transition: color var(--transition);
+  }
+
+  &__underline {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    will-change: transform;
+
+    // Светящийся эффект при наведении
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      border-radius: 2px;
+      transition: opacity var(--transition);
+    }
+  }
+
+  // Переход на оранжевый при наведении
+  &:hover {
+    .nav-link__text {
+      color: var(--accent);
+    }
+
+    .nav-link__underline::before {
+      opacity: 0.6;
+    }
+  }
+
+  // Активное состояние - оранжевый цвет текста и подчеркивание
+  &.active {
+    .nav-link__text {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-link__underline {
+      box-shadow: 0 0 20px rgba(255, 140, 0, 0.9), 0 0 35px rgba(255, 140, 0, 0.6);
+    }
+  }
+
+  // Фокус для доступности
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: var(--border-radius);
+  }
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.95rem;
+
+    &__underline {
+      height: 2px;
+      bottom: -3px;
+    }
+  }
+}

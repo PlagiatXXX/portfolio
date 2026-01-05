@@ -1,0 +1,100 @@
+.about {
+  background: var(--bg-secondary);
+
+  .about__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    align-items: start;
+  }
+
+  .about__text {
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+    }
+  }
+
+  .about__skills {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--spacing-sm);
+    }
+
+    .skill-badge {
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      color: white;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+    }
+  }
+
+  .about__cta {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+  }
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition);
+    cursor: pointer;
+
+    &.btn-primary {
+      background: var(--gradient);
+      color: white;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+      }
+    }
+
+    &.btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--accent);
+
+      &:hover {
+        background: var(--accent);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+      }
+    }
+  }
+
+@media (max-width: 768px) {
+  .about .about__content {
+    grid-template-columns: 1fr;
+  }
+
+  .about .about__cta {
+    flex-direction: column;
+  }
+}
