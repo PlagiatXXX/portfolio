@@ -1,12 +1,16 @@
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import './NotFound.scss';
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import "./NotFound.scss";
+import notFoundSvg from "/images/404.svg";
 
 export const NotFound = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="not-found section">
+    <section
+      className="not-found section"
+      style={{ backgroundImage: `url(${notFoundSvg})` }}
+    >
       <div className="container">
         <motion.div
           className="not-found__content"
@@ -31,7 +35,7 @@ export const NotFound = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <button className="btn btn-primary" onClick={() => navigate('/')}>
+            <button className="btn btn-primary" onClick={() => navigate("/")}>
               На главную
             </button>
             <button className="btn btn-secondary" onClick={() => navigate(-1)}>

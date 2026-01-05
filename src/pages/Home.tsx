@@ -1,6 +1,10 @@
-import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import './Home.scss';
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import "./Home.scss";
+import arrow2Svg from "/images/arrow2.svg";
+import codeSvg from "/images/code.svg";
+import fedorWebp from "/images/Fedor.webp";
+import arrowSvg from "/images/arrow.svg";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -36,14 +40,21 @@ export const Home = () => {
         >
           <motion.p variants={itemVariants} className="hero__greeting">
             👋 Привет, я начинающий
-            
           </motion.p>
 
           <motion.h1 variants={itemVariants} className="hero__title">
-            <span className="gradient-text">Full Stack</span> 
-            <img src="/images/arrow2.svg" alt="Декоративная стрелка" className='decoration'/>
+            <span className="gradient-text">Full Stack</span>
+            <img
+              src={arrow2Svg}
+              alt="Декоративная стрелка"
+              className="decoration"
+            />
             Разработчик
-            <img src="/images/code.svg" alt="Декоративный значок кода" className='decoration'/>
+            <img
+              src={codeSvg}
+              alt="Декоративный значок кода"
+              className="decoration"
+            />
           </motion.h1>
 
           <motion.p variants={itemVariants} className="hero__subtitle">
@@ -55,7 +66,7 @@ export const Home = () => {
               className="btn btn-primary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate('/projects')}
+              onClick={() => navigate("/projects")}
             >
               Смотреть проекты
             </motion.button>
@@ -64,20 +75,32 @@ export const Home = () => {
               className="btn btn-secondary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate("/contact")}
             >
               Связаться
             </motion.button>
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero__socials">
-            <a href="https://github.com/PlagiatXXX" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/PlagiatXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div whileHover={{ y: -5 }}>GitHub</motion.div>
             </a>
-            <a href="https://hh.ru/resume/9f1a100eff09d4f9a70039ed1f55453463396d" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://hh.ru/resume/9f1a100eff09d4f9a70039ed1f55453463396d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div whileHover={{ y: -5 }}>HH.ru</motion.div>
             </a>
-            <a href="https://t.me/PasFedor" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://t.me/PasFedor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <motion.div whileHover={{ y: -5 }}>Telegram</motion.div>
             </a>
           </motion.div>
@@ -89,18 +112,19 @@ export const Home = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
+          <img
+            src={fedorWebp}
+            alt="Профиль разработчика"
+            className="profile-image"
+          />
+
+          <div className="hero__caption">
             <img
-              src="/images/Fedor.webp"
-              alt="Профиль разработчика"
-              className="profile-image"
-            />
-            
-            <div className="hero__caption">
-            <img src="/images/arrow.svg"
+              src={arrowSvg}
               alt="Стрелка"
-              className='arrow-image'
+              className="arrow-image"
             />
-          <p>Это я!</p>
+            <p>Это я!</p>
           </div>
         </motion.div>
       </div>

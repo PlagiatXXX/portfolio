@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { getBlogPostPath } from '../router/routeTypes';
 import './BlogPage.scss';
+import { posts } from '../data/posts';
 
 interface Post {
   slug: string;
@@ -20,14 +21,11 @@ export const BlogPage = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchArticles = async () => {
+    const loadArticles = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch('/posts.json');
-        if (!response.ok) throw new Error('Ошибка загрузки статей');
-        const data: Post[] = await response.json();
-        setArticles(data);
+        setArticles(posts);
       } catch (err) {
         setError((err as Error).message);
       } finally {
@@ -35,7 +33,7 @@ export const BlogPage = () => {
       }
     };
 
-    fetchArticles();
+    loadArticles();
   }, []);
 
   if (loading) {
