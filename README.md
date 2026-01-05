@@ -60,7 +60,7 @@ npm install
 npm run dev
 ```
 
-Сайт будет доступен по адресу `https://github.com/PlagiatXXX/portfolio.git`
+Сайт будет доступен по адресу `https://localhost:5173/`
 
 ### Сборка для продакшена
 
