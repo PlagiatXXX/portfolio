@@ -1,4 +1,4 @@
-# Portfolio Site
+# Портфолио сайт
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-19.2.0-blue.svg)](https://reactjs.org/)
@@ -60,7 +60,7 @@ npm install
 npm run dev
 ```
 
-Сайт будет доступен по адресу `https://github.com/PlagiatXXX/portfolio.git`
+Сайт будет доступен по адресу `https://localhost:5173/`
 
 ### Сборка для продакшена
 
