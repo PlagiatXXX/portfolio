@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { posts } from "../data/posts";
 import "./BlogPost.scss";
 
 export const BlogPost = () => {
@@ -22,13 +23,10 @@ export const BlogPost = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchPost = async () => {
+    const loadPost = () => {
       try {
         setLoading(true);
         setError(null);
-        const response = await fetch("/posts.json");
-        if (!response.ok) throw new Error("Ошибка загрузки данных");
-        const posts: Post[] = await response.json();
         const foundPost = posts.find((p) => p.slug === slug);
         if (!foundPost) throw new Error("Статья не найдена");
         setPost(foundPost);
@@ -39,7 +37,7 @@ export const BlogPost = () => {
       }
     };
 
-    if (slug) fetchPost();
+    if (slug) loadPost();
   }, [slug]);
 
   if (loading) {

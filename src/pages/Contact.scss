@@ -124,3 +124,61 @@ textarea {
     }
   }
 }
+
+@media (max-width: 480px) {
+  .contact-page {
+    .page-title {
+      font-size: 1.5rem;
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-content {
+      gap: var(--spacing-md);
+    }
+
+    .contact-info {
+      .info-card {
+        padding: var(--spacing-sm);
+
+        h3 {
+          font-size: 1rem;
+        }
+
+        a {
+          font-size: 0.9rem;
+        }
+
+        .socials {
+          flex-direction: column;
+          gap: var(--spacing-xs);
+
+          a {
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+          }
+        }
+      }
+    }
+
+    .contact__form {
+      gap: var(--spacing-sm);
+
+      .form-group {
+        input,
+        textarea {
+          padding: 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .error {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
